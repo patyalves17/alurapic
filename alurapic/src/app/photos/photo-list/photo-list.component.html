@@ -1,24 +1,23 @@
-<!-- <ol class="list-unstyled">
-  <li >
-    <ap-photo *ngFor="let photo of photos "
-        [url]="photo.url" 
-        [alt]="photo.description">
-      </ap-photo>
-  </li>
-  
-</ol> -->
-
-<div class="text-center mt-3 mb-3">
+<!-- <div class="text-center mt-3 mb-3">
   <form>
-    <input 
-    class="rounded" type="search"
-    placeholder="search..."
-    autofocus
-    (keyup)="debounce.next($event.target.value)"
-    >
+      <div class="input-group">
+        <div class="input-group-prepend" >
+          <div class="input-group-text"><i aria-hidden="true" class="fa fa-search"></i></div>
+        </div>
+          <input 
+          class="form-control" type="search"
+          id="inlineFormInputGroupUsername" 
+          placeholder="search..."
+          autofocus
+          (keyup)="debounce.next($event.target.value)"/>
+        
+      </div>
+
   </form>
-</div>
+</div> -->
 
-
+<ap-search></ap-search>
 
 <ap-photos [photos]="photos | filterByDescription:filter"></ap-photos>
+
+<ap-load-button [hasMore]="hasMore" (click)="load()"> </ap-load-button>
