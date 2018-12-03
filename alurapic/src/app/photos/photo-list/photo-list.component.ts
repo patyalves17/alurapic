@@ -36,11 +36,16 @@ export class PhotoListComponent implements OnInit{
     console.log("load");
     this.photoService.getUserPhotoPaginated(this.userName, ++this.currentPage )
     .subscribe(photos=>{
+      this.filter='';
       this.photos=this.photos.concat(photos);
       
-      console.log(photos.length);
       if(photos.length==0 )this.hasMore=false
     })
   }
+
+  // typing($event){
+  //   this.filter=$event;
+  //   console.log("typing ",$event);
+  // }
 
 }

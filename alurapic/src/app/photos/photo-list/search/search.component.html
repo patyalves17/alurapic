@@ -9,6 +9,7 @@
             id="inlineFormInputGroupUsername" 
             placeholder="search..."
             autofocus
+            [value]="value"
             (keyup)="debounce.next($event.target.value)"/>
             <!-- <div class="input-group-prepend">
               <div class="input-group-text"><i class="fa fa-remove"></i></div>
