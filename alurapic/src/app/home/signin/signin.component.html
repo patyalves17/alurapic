@@ -2,7 +2,7 @@
 
     <h4 class="text-center pt-4">Login</h4>
     <div class="card-body">
-        <form class="form" [formGroup]="loginForm">
+        <form class="form" [formGroup]="loginForm" (submit)="doLogin()">
 
             <div class="form-group">
                 <input formControlName="userName" class="form-control" placeholder="user name" autofocus>
