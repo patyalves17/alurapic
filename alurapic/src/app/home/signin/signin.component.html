@@ -6,16 +6,12 @@
 
             <div class="form-group">
                 <input formControlName="userName" class="form-control" placeholder="user name" autofocus>
-                <small *ngIf="loginForm.get('userName').errors?.required"
-                 class="text-danger d-block mt-2">
-                    Username is required</small>
+                <ap-message text="Username is required" *ngIf="loginForm.get('userName').errors?.required"></ap-message>
             </div>
 
             <div class="form-group">
                 <input formControlName="password" type="password" class="form-control" placeholder="password">
-                <small  *ngIf="loginForm.get('password').errors?.required"
-                    class="text-danger d-block mt-2">
-                    Password is required</small>
+                <ap-message text="Password is required" *ngIf="loginForm.get('password').errors?.required"></ap-message>
             </div>
 
             <button [disabled]="loginForm.invalid" type="submit" class="btn btn-primary btn-block">
