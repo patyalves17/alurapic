@@ -5,7 +5,8 @@
         <form class="form" [formGroup]="loginForm" (submit)="doLogin()">
 
             <div class="form-group">
-                <input formControlName="userName" class="form-control" placeholder="user name" autofocus>
+                <input #userNameInput
+                formControlName="userName" class="form-control" placeholder="user name" autofocus>
                 <ap-message text="Username is required" *ngIf="loginForm.get('userName').errors?.required"></ap-message>
             </div>
 
