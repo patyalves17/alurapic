@@ -30,13 +30,14 @@ export class SignInComponent implements OnInit {
 
         this.auth.authenticate(userName, password)
             .subscribe(
-                res => this.router.navigate(['user',userName]),
+                res => {
+                    console.log(res);
+                    this.router.navigate(['user',userName])
+                },
                 err => {
                     console.log('error ', err)
                     this.loginForm.reset();
                     this.platformDetectorService.isPlatformBrowser() && this.userNameInput.nativeElement.focus();
-                    
-
                 }
             );
     }
